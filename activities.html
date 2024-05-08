@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Our Activities</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <!-- <h1 class="logo">Logo Here</h1> -->
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="index.html">Our Care</a></li>
+            <li><a href="index.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+        <div class="main-activity">
+            <h1>Our Care Activities</h1>
+        <img src="images/wetleaf.jpg" alt="wetleaf">
+        <p class="fadeInDown">“A human being is a part of the whole called by us universe, a part limited in time and space. He experiences himself, his thoughts and feeling as something separated from the rest, a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest to us. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty.”
+        <strong>― Albert Einstein</strong></p> 
+            <p class="fadeInDown">“The best remedy for those who are afraid, lonely or unhappy is to go outside, somewhere where they can be quite alone with the heavens, nature and God. Because only then does one feel that all is as it should be and that God wishes to see people happy, amidst the simple beauty of nature. As longs as this exists, and it certainly always will, I know that then there will always be comfort for every sorrow, whatever the circumstances may be. And I firmly believe that nature brings solace in all troubles.”
+                <strong>― Anne Frank, The Diary of a Young Girl</strong></p>
+            <img src="images/wetleaf.jpg" alt="wetleaf">
+            <img src="images/wetleaf.jpg" alt="wetleaf">
+            <p class="fadeInDown">“The best remedy for those who are afraid, lonely or unhappy is to go outside, somewhere where they can be quite alone with the heavens, nature and God. Because only then does one feel that all is as it should be and that God wishes to see people happy, amidst the simple beauty of nature. As longs as this exists, and it certainly always will, I know that then there will always be comfort for every sorrow, whatever the circumstances may be. And I firmly believe that nature brings solace in all troubles.”
+                <strong>― Anne Frank, The Diary of a Young Girl</strong></p>
+                <p class="fadeInDown">“The best remedy for those who are afraid, lonely or unhappy is to go outside, somewhere where they can be quite alone with the heavens, nature and God. Because only then does one feel that all is as it should be and that God wishes to see people happy, amidst the simple beauty of nature. As longs as this exists, and it certainly always will, I know that then there will always be comfort for every sorrow, whatever the circumstances may be. And I firmly believe that nature brings solace in all troubles.”
+                    <strong>― Anne Frank, The Diary of a Young Girl</strong></p>
+                <img src="images/wetleaf.jpg" alt="wetleaf">
+                <img src="images/wetleaf.jpg" alt="wetleaf">
+                <p class="fadeInDown">“The best remedy for those who are afraid, lonely or unhappy is to go outside, somewhere where they can be quite alone with the heavens, nature and God. Because only then does one feel that all is as it should be and that God wishes to see people happy, amidst the simple beauty of nature. As longs as this exists, and it certainly always will, I know that then there will always be comfort for every sorrow, whatever the circumstances may be. And I firmly believe that nature brings solace in all troubles.”
+                    <strong>― Anne Frank, The Diary of a Young Girl</strong></p>
+          
+            </div>
+                <!-- images from google API load here -->
+        <div class="act-images">
+        <div class="loader"></div>
+      
+        </div>
+
+   
+   
+        <script src="script.js"></script>
+        <script>
+            // Avtivities page images from google API
+const imageContainer = document.querySelector(".act-images");
+const loader = document.querySelector('#loader');
+
+let photosArray = [];
+let imagesLoaded = 0;
+let totalImages = 0;
+let ready = false;
+
+const count = 2;
+const apiKey = 'ys2IHVZoCwgYvUyrAjHVwCLVYNj2KPv-qAHOdxhcyPE';
+const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+//see if all images were loaded
+const imageLoaded = () => {
+    imagesLoaded ++;
+    if(imagesLoaded === totalImages){
+        ready = true;
+        loader.hidden = true;
+    }
+}
+
+//create setattribute function
+const setAttributes = (elements, attributes)=>{
+    for(const key in attributes){
+        elements.setAttribute(key, attributes[key]);
+
+    }
+}
+
+
+//create elements to display photos
+const displayPhotos = () => {
+    imagesLoaded = 0;
+    totalImages = photosArray.length;
+    photosArray.forEach((photo) => {
+        const linkA = document.createElement('a');
+        setAttributes(linkA, {
+            href: photo.links.html,
+            target: '_blank',
+        });
+
+        const img = document.createElement('img');      
+        setAttributes(img,{
+            src: photo.urls.regular,
+            alt: photo.alt_description,
+            title: photo.alt_description,
+        });
+        // load event listner
+
+        img.addEventListener('load', imageLoaded);
+
+        linkA.appendChild(img);
+        imageContainer.appendChild(linkA);
+    });
+}
+
+//get photos from unsplash API
+const getPhotos = async() =>{
+    try {
+        const response = await fetch(apiUrl);
+        photosArray = await response.json();
+        //console.log(photosArray);
+        displayPhotos();
+    } catch (error) {
+        
+    }
+}
+
+window.onload = getPhotos;
+        </script>
+    </body>
+</html>
