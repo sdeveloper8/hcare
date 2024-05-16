@@ -1,6 +1,9 @@
 const imageSlider = document.querySelector(".background-images");
 const leftButton = document.querySelector(".left-arrow");
 const rightButton = document.querySelector(".right-arrow");
+
+const dropMenu = document.querySelector(".drop-menu");
+const dropdownContent = document.querySelector(".dropdown-content");
 const images = [
   "trainstation.jpg","wetleaf.jpg", "seaview.jpeg" ,
 ];
@@ -36,25 +39,16 @@ const slide = ()=> {
         currentIndex = (currentIndex + 1) % images.length;
         const imageUrl = `url('images/${images[currentIndex]}')`;
         imageSlider.style.backgroundImage = imageUrl;
-        //imageSlider.classList.add('image-fade');
-        imageSlider.classList.add('img-transition');
-          
+        imageSlider.classList.add('img-transition');  
       }, 3000);
     }
- 
-
   // Call the function when the page is loaded
-
 window.onload = slide;
 
-// let navbar = document.querySelector(".nav-bar");
-// let sticky = navbar.offsetTop;
+dropMenu.addEventListener("mouseenter",(()=>{
+    dropdownContent.style.display = "flex";
+    }))
+dropMenu.addEventListener("mouseleave",(()=>{
+    dropdownContent.style.display = "none";
+}))
 
-// const  stickyNavbar = () => {
-//   if (window.scrollY >= sticky) {
-//     navbar.classList.add("sticky");
-//   } else {
-//     navbar.classList.remove("sticky");
-//   }
-// }
-// window.onscroll = stickyNavbar;
