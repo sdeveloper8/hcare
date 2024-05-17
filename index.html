@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="images/hands.png">
     <link rel="stylesheet" href="style.css">
-    <title>P Care Home</title>
+    <title>H Care Home</title>
 </head>
 <body>
     <header>
+        <div class="logo">HCare</div>
         <nav class="nav-bar">
-            <!-- <h1 class="logo">Logo Here</h1> -->
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
-                <li class="drop-menu"><a href="activities.html">Activities</a>
+                <li class="drop-menu"><a href="#page2">Activities</a>
                     <div class="dropdown-content">
                         <a href="#">Activity a</a>
                         <a href="#">Activity b</a>
@@ -61,24 +62,49 @@
         </div>   
     </section>
     <section id="contact-form"> 
-        <form  class="contact-form"  action="submit">
+        <form  class="contact-form" 
+        action="https://formspree.io/f/mzbnwqdd"
+        method="POST">
             <h4>Contact Us</h4>
             <label for="">First Name</label>
-            <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+            <input 
+                type="text" 
+                name="first-name" 
+                id="first-name" 
+                placeholder="First Name" 
+                autocomplete="off"
+                required>
             <label for="">Last Name</label>
-            <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+            <input 
+                type="text" 
+                name="last-name" 
+                id="last-name" 
+                placeholder="Last Name" 
+                autocomplete="off"
+                required>
             <label for="">Email</label>
-            <input type="email" name="email" id="email" placeholder="Email Id" required>
+            <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                placeholder="Email Id"
+                autocomplete="off" 
+                required>
             <label for="">Message</label>
-            <textarea name="message" id="message" rows="8" placeholder="Your Message"></textarea>
+            <textarea 
+                name="message" 
+                id="message" rows="8" 
+                placeholder="Your Message"
+                min="10"
+                autocomplete="off"
+                required>
+                </textarea>
             <button type="submit" name="submit" class="submit">Submit</button>
         </form>
     </section>
     </main>
     <footer>
-        <!-- images from google API load here
-            <div class="act-images">
-            <div class="loader"></div> -->  
+      
     <!-- <section id="footer">
                 <div id="map">
                     Adress

@@ -10,10 +10,24 @@ body {
     line-height: 1.75;
     color: #000;
 }
+.logo{
+    background-image: url("images/hands.png");
+    background-position-x: left;
+    background-repeat: no-repeat;
+    background-size:30%;
+    color: rgba(14, 54, 6, 0.685);
+    font-weight: 700;
+    font-size: 3rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    position: fixed;
+    
+    z-index: 10;
+}
 h1{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5rem;
     color: rgba(16, 15, 15, 0.941);
     font-size: medium;
 }
@@ -38,8 +52,11 @@ p,label{color: aliceblue;}
     height: auto;
     width: 100%;
 }
+.bottom-bar{
+   
+}
 .nav-bar{
-    margin-top: .2rem;
+    margin-top: .1rem;
     position: fixed;
     z-index: 100;
 }
@@ -84,26 +101,26 @@ a{
     display: none;
     position: absolute;
     background-color: rgba(28, 27, 27, 0.313);
-    min-width: 160px;
+    width:auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     flex-direction: column;
-    margin-top: .5rem;
-    padding: 1rem;
-    -webkit-backdrop-filter: blur(5px);
+    margin-top: .6rem;
+    padding: 1rem 0;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     z-index: 1;
 
   }
-.dropdown-content > a{
-    width:auto;
-    height: 3rem;
-    padding-top: 1rem;
+.dropdown-content > a {
+    line-height: 2rem;
+    padding: .5rem 1rem;
     font-size: 100%;
 }
-.dropdown-content > a{
-    
+.dropdown-content > a:hover {
+    background-color: rgba(0, 0, 0, 0.479);
 }
-.active{
+a:active{
     color: rgba(10, 63, 9, 0.732);
 }
 div.bottom-bar{
@@ -160,6 +177,9 @@ p:before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+.our-care{
+    margin-top: 5rem;
+}
     /* main css */
 .our-care > h1{
     font-size: x-large;
@@ -192,6 +212,23 @@ p:before {
     width: 100%;
     animation: fadeInDown 3s ease-in-out;
 }
+
+.main-activity > img:nth-of-type(1){
+  border-radius: 30px 0 0 30px;
+}
+.main-activity > img:nth-of-type(2){
+    border-radius: 0 30px 30px 0;
+}
+.main-activity > img:nth-of-type(3){
+    border-radius: 30px 0 0 30px;
+}
+.main-activity > img:nth-of-type(4){
+    border-radius: 0 30px 30px 0;
+}
+.main-activity > img:nth-of-type(5){
+    border-radius: 30px 0 0 30px;
+}
+
 .fadeInDown{
     animation: fadeInDown 6s ease-in-out;
 }
@@ -303,8 +340,21 @@ p:before {
     .main-activity{
         grid-template-columns: auto;
     }
+   
     .main-activity > img{
         margin-bottom: .5rem;
+        border-radius: 40px 40px;
+    }
+      .main-activity:nth-child(3){
+          order: 4;
+      }
+      .main-activity:nth-child(4){
+          order: 3;
+      }
+    .logo{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 2rem;
     }
     .contact-form{
          grid-template-columns: 1fr; 
