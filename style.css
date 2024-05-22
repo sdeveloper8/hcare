@@ -10,6 +10,9 @@ body {
     line-height: 1.75;
     color: #000;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 .logo{
     background-image: url("images/hands.png");
     background-position-x: left;
@@ -44,16 +47,22 @@ p,label{color: aliceblue;}
 .img-transition{
      animation: fadeInDown 3s ease-in; 
      transition:  2s linear ; 
-
-
 }
 .nav-bar, .bottom-bar{
     background-color: rgba(0, 0, 0, 0.6);
-    height: auto;
+    height: 10vh;
     width: 100%;
 }
-.bottom-bar{
-   
+
+.bottom-bar > p{
+    letter-spacing: .2rem;
+    animation: movebar 10s linear infinite;
+}
+.nav-burger{
+    display: none;
+}
+.cancel-burger{
+    display: none;
 }
 .nav-bar{
     margin-top: .1rem;
@@ -61,10 +70,10 @@ p,label{color: aliceblue;}
     z-index: 100;
 }
 .nav-bar > ul{
-    z-index: 200;
+    z-index: 101;
 }
 .nav-bar > ul > li{
-    z-index: 300;
+    z-index: 102;
 }
 /* .nav-bar .logo{
      z-index: 1; 
@@ -315,6 +324,16 @@ p:before {
  
  
 }
+.blink {
+    animation: blinker 2s linear infinite;
+   
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0.3;
+    }
+}
 @keyframes bubble{
     0%{
         transform: translateY(0);
@@ -339,7 +358,34 @@ p:before {
     0% {opecity: 0;}
     100% {opecity:1;}
 }
-@media only screen and (max-width: 600px) {
+@keyframes movebar{
+    from{
+        transform: translateX(90vw);
+    }to{
+        transform: translateX(-100vw);
+    }
+
+}
+/* @media only screen and (max-width: 600px) { */
+    @media (max-width:600px){
+    .menu {
+        display: none;
+    }
+    .nav-burger{
+        background-color: rgba(247, 247, 238, 0.259);
+        width: 2.5rem;
+        height: 2rem;
+        display: flex;
+        float: right;   
+        margin-top: .8rem;
+        margin-right: 2rem;
+        z-index: 201;  
+    }
+    .nav-burger > img{
+     
+       width: 100%;
+       z-index: 204;
+    }
     .main-activity{
         grid-template-columns: auto;
     }
