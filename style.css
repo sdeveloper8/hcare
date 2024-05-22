@@ -178,7 +178,10 @@ p:before {
     transform: rotate(-45deg);
 }
 .our-care{
-    margin-top: 5rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
 }
     /* main css */
 .our-care > h1{
@@ -271,7 +274,7 @@ p:before {
     display: grid;
     grid-template-columns: 20% 70%;
     justify-content: center;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
 }
 .contact-form > h4{
     /* grid-column: 2/3; */
@@ -356,7 +359,10 @@ p:before {
         font-weight: 700;
         margin-top: 2rem;
     }
+  
     .contact-form{
+        height:90vh;
+        margin-top:1rem;
          grid-template-columns: 1fr; 
     }
     .contact-form > h4{
