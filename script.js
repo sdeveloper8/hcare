@@ -76,9 +76,3 @@ cancelBurger.addEventListener("click",(()=>{
   burger.style.display = "flex";
   menu.style.display = "none";
 }))
-// .menu{
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-//   position: relative;
-// }
