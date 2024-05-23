@@ -3,6 +3,7 @@ const leftButton = document.querySelector(".left-arrow");
 const rightButton = document.querySelector(".right-arrow");
 const burger = document.querySelector(".nav-burger");
 const menu = document.querySelector(".menu");
+const menuLi = document.querySelectorAll(".menu li") ;
 const cancelBurger = document.querySelector(".cancel-burger");
 
 const dropMenu = document.querySelector(".drop-menu");
@@ -61,13 +62,14 @@ burger.addEventListener("click", (()=>{
   menu.style.width = "100vw";
   menu.style.height = "auto";
   menu.style.backgroundColor = " rgba(0, 0, 0, 0.6)";
-  menu.style.justifyContent = "center";
-  menu.style.alignItems = "center";
-  
-   burger.style.display = "none";
-   cancelBurger.style.display = "flex";
-   cancelBurger.style.width = "2rem";
-   cancelBurger.style.height = "2rem";
+  menuLi.forEach((e)=>{
+    e.style.display = "flex";
+    e.style.justifyContent = "center";
+    e.style.alignItems = "center";
+  })
+  burger.style.display = "none";
+  cancelBurger.style.display = "flex";
+
 }))
 cancelBurger.addEventListener("click",(()=>{
   cancelBurger.style.display = "none";

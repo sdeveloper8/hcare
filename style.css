@@ -52,6 +52,7 @@ p,label{color: aliceblue;}
     background-color: rgba(0, 0, 0, 0.6);
     height: 10vh;
     width: 100%;
+    color: rgba(255, 255, 255, 0.576);
 }
 
 .bottom-bar > p{
@@ -60,9 +61,31 @@ p,label{color: aliceblue;}
 }
 .nav-burger{
     display: none;
+    background-color: rgba(255, 255, 255, 0.576);
+    width: 2.5rem;
+    height: 2rem;
+    float: right;   
+    margin-top: .8rem;
+    margin-right: 2rem;
+    z-index: 201; 
 }
+.nav-burger > img{
+    width: 100%;
+    z-index: 204;
+ }
 .cancel-burger{
     display: none;
+    width: 100vw;
+    height: 2rem;
+    margin-top: .8rem;
+    margin-left: 90%;
+    z-index: 205;    
+}
+.cancel-burger >img{
+    background-color: rgba(255, 255, 255, 0.576);
+    height: 2rem;
+    width: 2rem;
+
 }
 .nav-bar{
     margin-top: .1rem;
@@ -372,19 +395,7 @@ p:before {
         display: none;
     }
     .nav-burger{
-        background-color: rgba(247, 247, 238, 0.259);
-        width: 2.5rem;
-        height: 2rem;
-        display: flex;
-        float: right;   
-        margin-top: .8rem;
-        margin-right: 2rem;
-        z-index: 201;  
-    }
-    .nav-burger > img{
-     
-       width: 100%;
-       z-index: 204;
+        display: flex;  
     }
     .main-activity{
         grid-template-columns: auto;
